@@ -48,7 +48,6 @@ export default function Payment() {
           });
         }}
         onSuccess={(details, data) => {
-          const order = await actions.order.capture();
           const newOrder = {
             buyer,
             payment: details,

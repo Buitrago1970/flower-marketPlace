@@ -1,0 +1,9 @@
+.container-hero {
+  display: flex;
+  justify-content: center;
+}
+.img-hero {
+  width: 149%;
+  background-position: 50% 50%;
+  background-size: cover;
+}
