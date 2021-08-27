@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
 import { Link } from 'react-router-dom';
+import Helmet from '../components/Helmet';
 import AppContext from '../context/AppContext';
 import { handleSumTotal } from '../utils/index';
 
@@ -13,44 +14,51 @@ const Checkout = () => {
     removeFromCart(item, i);
   };
   return (
-    <div className="Checkout">
-      <div className="Checkout-content">
-        {cart.length > 0 ? (
-          <h3>Lista de Pedidos:</h3>
-        ) : (
-          <>
-            <h3>No has agregado ningun pedido</h3>
-            <Link to={'/'}>
-              <button type="button">Ir al HOME</button>
-            </Link>
-          </>
-        )}
+    <>
+      <Helmet
+        title="Checkout"
+        description="Venta de flores Medicinales originarias de Colombia mas de 40mil especies de plantas."
+        url="https://plantas-el-camello.firebaseapp.com/checkout"
+      />
+      <div className="Checkout">
+        <div className="Checkout-content">
+          {cart.length > 0 ? (
+            <h3>Lista de Pedidos:</h3>
+          ) : (
+            <>
+              <h3>No has agregado ningun pedido</h3>
+              <Link to={'/'}>
+                <button type="button">Ir al HOME</button>
+              </Link>
+            </>
+          )}
 
-        {cart.map((item, i) => (
-          <div className="Checkout-item" key={i}>
-            <div className="Checkout-element">
-              <h4>{item.title}</h4>
-              <span>{`$${item.price}`}</span>
+          {cart.map((item, i) => (
+            <div className="Checkout-item" key={i}>
+              <div className="Checkout-element">
+                <h4>{item.title}</h4>
+                <span>{`$${item.price}`}</span>
+              </div>
+              <button
+                onClick={() => handleDeleteItem(item, i)}
+                type="button"
+                title="Eliminar"
+              >
+                <i className="fas fa-trash-alt" />
+              </button>
             </div>
-            <button
-              onClick={() => handleDeleteItem(item, i)}
-              type="button"
-              title="Eliminar"
-            >
-              <i className="fas fa-trash-alt" />
-            </button>
-          </div>
-        ))}
-      </div>
-      {cart.length > 0 && (
-        <div className="Checkout-sidebar">
-          <h3>{`Precio Total: $${handleSumTotal(cart)}`}</h3>
-          <Link to={'/checkout/info'}>
-            <button type="button">Continuar pedido</button>
-          </Link>
+          ))}
         </div>
-      )}
-    </div>
+        {cart.length > 0 && (
+          <div className="Checkout-sidebar">
+            <h3>{`Precio Total: $${handleSumTotal(cart)}`}</h3>
+            <Link to={'/checkout/info'}>
+              <button type="button">Continuar pedido</button>
+            </Link>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import AppContext from '../context/AppContext';
 import { PayPalButton } from 'react-paypal-button-v2';
 import { handleSumTotal } from '../utils/index';
+import Helmet from '../components/Helmet';
 
 import '../styles/components/Payment.css';
 
@@ -13,56 +14,63 @@ export default function Payment() {
   const history = useHistory();
 
   return (
-    <div className="Payment">
-      <div className="Payment-content">
-        <h3>Resumen del pedido:</h3>
-        {cart.map((item, i) => (
-          <div className="Checkout-item" key={i}>
-            <div className="Checkout-element">
-              <h4>{item.title}</h4>
-              <span>{`$${item.price}`}</span>
-            </div>
-            <button
-              onClick={() => handleDeleteItem(item, i)}
-              type="button"
-              title="Eliminar"
-            >
-              <i className="fas fa-trash-alt" />
-            </button>
-          </div>
-        ))}
-        <h3>{`Precio Total: $${Total}`}</h3>
-      </div>
-      <PayPalButton
-        createOrder={(data, actions, error) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                intent: 'CAPTURE',
-                amount: {
-                  currency_code: 'USD',
-                  value: Total,
-                },
-              },
-            ],
-          });
-        }}
-        onSuccess={(details, data) => {
-          const newOrder = {
-            buyer,
-            payment: details,
-            order: data,
-          };
-          history.push('/checkout/success');
-          addNewOrder(newOrder);
-          alert('Transaction completed by ' + details.payer.name.given_name);
-        }}
-        options={{
-          clientId: process.env.CLIENT_ID_PP,
-        }}
-        catchError={(error) => console.log(error)}
-        onCancel={(data) => console.log(data)}
+    <>
+      <Helmet
+        title="Payment"
+        description="Venta de flores Medicinales originarias de Colombia mas de 40mil especies de plantas."
+        url="https://plantas-el-camello.firebaseapp.com/checkout/payment"
       />
-    </div>
+      <div className="Payment">
+        <div className="Payment-content">
+          <h3>Resumen del pedido:</h3>
+          {cart.map((item, i) => (
+            <div className="Checkout-item" key={i}>
+              <div className="Checkout-element">
+                <h4>{item.title}</h4>
+                <span>{`$${item.price}`}</span>
+              </div>
+              <button
+                onClick={() => handleDeleteItem(item, i)}
+                type="button"
+                title="Eliminar"
+              >
+                <i className="fas fa-trash-alt" />
+              </button>
+            </div>
+          ))}
+          <h3>{`Precio Total: $${Total}`}</h3>
+        </div>
+        <PayPalButton
+          createOrder={(data, actions, error) => {
+            return actions.order.create({
+              purchase_units: [
+                {
+                  intent: 'CAPTURE',
+                  amount: {
+                    currency_code: 'USD',
+                    value: Total,
+                  },
+                },
+              ],
+            });
+          }}
+          onSuccess={(details, data) => {
+            const newOrder = {
+              buyer,
+              payment: details,
+              order: data,
+            };
+            history.push('/checkout/success');
+            addNewOrder(newOrder);
+            alert('Transaction completed by ' + details.payer.name.given_name);
+          }}
+          options={{
+            clientId: process.env.CLIENT_ID_PP,
+          }}
+          catchError={(error) => console.log(error)}
+          onCancel={(data) => console.log(data)}
+        />
+      </div>
+    </>
   );
 }

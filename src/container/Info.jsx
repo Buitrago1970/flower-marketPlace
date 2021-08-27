@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import Helmet from '../components/Helmet';
 import AppContext from '../context/AppContext';
 import '../styles/components/Info.css';
 
@@ -35,45 +36,56 @@ export default function Info() {
     return total;
   };
   return (
-    <div className="Information">
-      <div className="Information-content">
-        <div className="Information-head">
-          <h2>Información de contacto:</h2>
-        </div>
-        <div className="Information-form">
-          <form ref={form}>
-            <input type="text" placeholder="Nombre completo" name="name" />
-            <input type="text" placeholder="Correo Electronico" name="email" />
-            <input type="text" placeholder="Direccion" name="addres" />
-            <input type="text" placeholder="apto" name="apto" />
-            <input type="text" placeholder="Ciudad" name="city" />
-            <input type="text" placeholder="Pais" name="country" />
-            <input type="text" placeholder="Estado" name="state" />
-            <input type="text" placeholder="Codigo postal" name="cp" />
-            <input type="text" placeholder="Telefono" name="phone" />
-          </form>
-        </div>
-        <div className="Information-buttons">
-          <Link to={'/Checkout'}>
-            <div className="Information-back">Regresar</div>
-          </Link>
-          <button className="santeria" onClick={handleSubmit}>
-            Pagar
-          </button>
-        </div>
-      </div>
-      <div className="Information-sidebar">
-        <h3>Pedido:</h3>
-        {cart.map((item, i) => (
-          <div className="Information-item" key={i}>
-            <div className="Information-element">
-              <h4>{item.title}</h4>
-              <span>${item.price}</span>
-            </div>
+    <>
+      <Helmet
+        title="info"
+        description="Venta de flores Medicinales originarias de Colombia mas de 40mil especies de plantas."
+        url="https://plantas-el-camello.firebaseapp.com/checkout/info"
+      />
+      <div className="Information">
+        <div className="Information-content">
+          <div className="Information-head">
+            <h2>Información de contacto:</h2>
           </div>
-        ))}
-        <h3>{`Total: $${handleSumTotal()}`}</h3>
+          <div className="Information-form">
+            <form ref={form}>
+              <input type="text" placeholder="Nombre completo" name="name" />
+              <input
+                type="text"
+                placeholder="Correo Electronico"
+                name="email"
+              />
+              <input type="text" placeholder="Direccion" name="addres" />
+              <input type="text" placeholder="apto" name="apto" />
+              <input type="text" placeholder="Ciudad" name="city" />
+              <input type="text" placeholder="Pais" name="country" />
+              <input type="text" placeholder="Estado" name="state" />
+              <input type="text" placeholder="Codigo postal" name="cp" />
+              <input type="text" placeholder="Telefono" name="phone" />
+            </form>
+          </div>
+          <div className="Information-buttons">
+            <Link to={'/Checkout'}>
+              <div className="Information-back">Regresar</div>
+            </Link>
+            <button className="santeria" onClick={handleSubmit}>
+              Pagar
+            </button>
+          </div>
+        </div>
+        <div className="Information-sidebar">
+          <h3>Pedido:</h3>
+          {cart.map((item, i) => (
+            <div className="Information-item" key={i}>
+              <div className="Information-element">
+                <h4>{item.title}</h4>
+                <span>${item.price}</span>
+              </div>
+            </div>
+          ))}
+          <h3>{`Total: $${handleSumTotal()}`}</h3>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
