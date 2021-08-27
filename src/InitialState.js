@@ -13,6 +13,15 @@ export default {
         'Abarema es un género de grandes árboles perteneciente a la familia Fabaceae. Son especies tropicales que están distribuidas por América desde México hasta Bolivia.',
     },
     {
+      id: '2',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Starr_031114-0020_Passiflora_subpeltata.jpg/220px-Starr_031114-0020_Passiflora_subpeltata.jpg',
+      title: 'acidocroton',
+      price: 10,
+      description:
+        'Acidocroton es un género perteneciente a la familia de las euforbiáceas con 14 especies​ de plantas.​​',
+    },
+    {
       id: '3',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Starr_031114-0020_Passiflora_subpeltata.jpg/220px-Starr_031114-0020_Passiflora_subpeltata.jpg',
