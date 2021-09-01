@@ -5,7 +5,7 @@ const image =
 
 const MetaHead = ({ title, description, url }) => (
   <Helmet>
-    <title>{`${title} - Flores Camello`}</title>
+    <title>{`${title} - Anda Shop`}</title>
     <meta name="description" content={description} />
     <meta
       name="robots"
@@ -14,10 +14,10 @@ const MetaHead = ({ title, description, url }) => (
     <link rel="canonical" href={url} />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content={`${title} - Flores Camello `} />
+    <meta property="og:title" content={`${title} - Anda Shop `} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
-    <meta property="og:site_name" content="Flores Camello" />
+    <meta property="og:site_name" content="Anda Shop" />
     <meta property="og:image" content={image} />
     <meta property="og:image:secure_url" content={image} />
     <meta property="og:image:width" content="1280" />
@@ -33,7 +33,7 @@ const MetaHead = ({ title, description, url }) => (
       content="@SSYBuitrago
 "
     />
-    <meta name="twitter:title" content={`${title} - Flores Camello `} />
+    <meta name="twitter:title" content={`${title} - Anda Shop `} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
   </Helmet>

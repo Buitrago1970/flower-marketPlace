@@ -1,22 +1,26 @@
 .Header {
   display: flex;
   justify-content: space-between;
+  padding: 0px 50px;
+  align-items: center;
 }
 .Header-checkout {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  justify-items: center;
-  width: 30px;
-  margin: 0 0 0 0.5em;
+  font-size: 25px;
+}
+.Header-checkout:hover {
+  color: rgb(189, 189, 189);
 }
 .Header-alert {
-  color: #33b1ff;
-
-  font-size: 14px;
+  color: #ffffff;
+  font-size: 20px;
   margin-left: 5px;
 }
 .Header a {
   text-decoration: none;
-  color: #33b1ff;
+  color: #ffffff;
+}
+.Header-title {
+  font-size: 45px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

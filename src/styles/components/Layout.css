@@ -3,13 +3,24 @@
 body {
   margin: 0;
   padding: 0;
-  color: #3c484e;
+  color: #ffffff;
   font-family: 'Open Sans', sans-serif;
+  background-image: url('../../images/3c8a6a679588f4920a1e526878828f36.jpg');
+  padding-top: 10px;
 }
 
 .Main {
-  padding: 10px;
-  grid-template-columns: minmax(auto, 768px);
-  display: grid;
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.323);
+  box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
+  border: 0px rgba(255, 255, 255, 0.4) solid;
+  border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
+  border-right: 0px rgba(40, 40, 40, 0.35) solid;
+  padding: 30px;
   justify-content: center;
+  display: grid;
+  max-width: 93%;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-top: 36px;
 }

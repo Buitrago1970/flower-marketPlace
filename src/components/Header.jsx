@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import { Link } from 'react-router-dom';
+import { FiShoppingCart } from 'react-icons/fi';
 
 import '../styles/components/Header.css';
 
@@ -10,11 +11,11 @@ export default function Header() {
   return (
     <div className="Header">
       <Link to={'/'}>
-        <h1 className="Header-title">Plantas el Camello </h1>
+        <h1 className="Header-title">Anda Shop</h1>
       </Link>
       <Link to={'/Checkout'}>
         <div className="Header-checkout">
-          <i className="fas fa-shopping-basket" />
+          <FiShoppingCart />
           {cart.length > 0 && <div className="Header-alert">{cart.length}</div>}
         </div>
       </Link>
