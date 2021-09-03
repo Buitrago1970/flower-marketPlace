@@ -13,14 +13,27 @@ body {
   backdrop-filter: blur(15px);
   background-color: rgba(255, 255, 255, 0.323);
   box-shadow: rgb(0 0 0 / 30%) 2px 8px 8px;
-  border: 0px rgba(255, 255, 255, 0.4) solid;
   border-bottom: 0px rgba(40, 40, 40, 0.35) solid;
   border-right: 0px rgba(40, 40, 40, 0.35) solid;
   padding: 30px;
   justify-content: center;
-  display: grid;
-  max-width: 93%;
+  max-width: 90%;
   margin: 0 auto;
   border-radius: 20px;
   margin-top: 36px;
+}
+a {
+  text-decoration: none;
+}
+@media (max-width: 800px) {
+  .Main {
+    padding: 20px;
+  }
+}
+@media (max-width: 550px) {
+  .Main {
+    backdrop-filter: blur(13px);
+    border: 1px rgba(255, 255, 255, 0.4) solid;
+    margin-top: 20px;
+  }
 }

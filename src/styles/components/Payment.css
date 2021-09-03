@@ -32,3 +32,18 @@
 .Payment-element h4 {
   margin: 0;
 }
+@media (max-width: 700px) {
+  .Payment {
+    grid-template-columns: 1fr;
+  }
+  .payment-item {
+    display: flex;
+    padding: 18px 5px;
+  }
+  .container-payment-paypal {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .title-payment {
+    margin: 25px;
+  }
+}

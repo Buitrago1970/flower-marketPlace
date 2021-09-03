@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <div className="Header">
       <Link to={'/'}>
-        <h1 className="Header-title">Anda Shop</h1>
+        <h1 className="Header-title">🌿Plantana Shop</h1>
       </Link>
       <Link to={'/Checkout'}>
         <div className="Header-checkout">

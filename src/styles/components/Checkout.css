@@ -4,12 +4,47 @@
   grid-row-gap: 1.5em;
   display: grid;
   padding: 0 0 4em 0;
+  /* min-width: 1200px; */
+}
+.Checkout-content {
+  background: #ffffff4f;
+  border-radius: 5px;
+  border: 1px solid #ffffff23;
+  color: #3c3a3a;
+  padding-bottom: 0;
+  margin-bottom: 50px;
+}
+.container-items {
+  padding: 10px;
+}
+.container-title-checkout {
+  padding: 8px 0px;
+  border-bottom: 1px solid #fff;
+  color: rgb(255, 255, 255);
+  background: #ffffff1f;
 }
 .Checkout-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0 0 0;
+  list-style: none;
+  font-size: 16px;
+  transition: 0.3s;
+  border-bottom: 1px solid #ffffff66;
+  padding: 10px;
+}
+.containerImg {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.containerImg img {
+  border-radius: 5px 5px 0 0;
+  object-fit: contain;
+  width: 180px;
+  height: 180px;
 }
 .Checkout-item .fas {
   margin: 0 0 0 10px;
@@ -29,30 +64,63 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border-bottom: 1px solid #eee;
 }
 .Checkout-element h4 {
-  margin: 0;
+  margin: 25px;
+  text-transform: capitalize;
+  font-size: 21px;
+  color: #ffffff;
 }
-
+.Checkout-sidebar {
+  color: #3c3a3a;
+  padding: 10px 18px;
+}
 .Checkout-sidebar button {
-  box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  background: linear-gradient(to bottom, #c6ee63 5%, #cfb346 100%);
+  background: #ffce0e;
   border-radius: 6px;
-  border: 1px solid #c6ee63;
+  border: none;
   display: inline-block;
   cursor: pointer;
-  color: #000000;
+  color: #000;
   font-family: Arial;
   font-size: 15px;
   font-weight: bold;
-  padding: 6px 24px;
+  padding: 10px 23px;
   text-decoration: none;
   width: 100%;
   display: block;
   outline: none;
 }
-
-a {
-  text-decoration: none;
+.Checkout-sidebar button:hover {
+  background: #caa50d;
+}
+.price {
+  color: #ffffff;
+  font-size: 20px;
+}
+.title-price {
+  border: none;
+  margin-bottom: 15px;
+}
+@media (max-width: 700px) {
+  .Checkout {
+    grid-template-columns: 1fr;
+  }
+  .containerImg img {
+    width: 100px;
+    height: auto;
+  }
+  .Checkout-item {
+    display: block;
+    padding: 0px;
+    text-align: end;
+    font-size: 15px;
+  }
+  .Checkout-element h4 {
+    margin: 14px;
+    font-size: 14px;
+  }
+  .Checkout-sidebar {
+    grid-area: 1 / 1 / 2 / 2;
+  }
 }

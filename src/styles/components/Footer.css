@@ -1,4 +1,26 @@
 .Footer {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
+}
+.instagram {
+  color: #e44862;
+  margin: 0 5px;
+}
+.github {
+  color: #2f2f2f;
+  margin: 0 5px;
+}
+.social-media {
+  text-align: end;
+  margin-right: 62px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 25px;
+}
+@media (max-width: 550px) {
+  .Footer {
+    display: block;
+    text-align: center;
+  }
 }

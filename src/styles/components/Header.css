@@ -3,6 +3,7 @@
   justify-content: space-between;
   padding: 0px 50px;
   align-items: center;
+  margin-bottom: 50px;
 }
 .Header-checkout {
   display: flex;
@@ -21,6 +22,12 @@
   color: #ffffff;
 }
 .Header-title {
-  font-size: 45px;
+  font-size: 40px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+@media (max-width: 550px) {
+  .Header {
+    padding: 0px;
+    align-items: flex-end;
+  }
 }

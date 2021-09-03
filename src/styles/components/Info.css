@@ -15,6 +15,8 @@
 }
 .Information-back {
   margin: 10px 0 0 0;
+  color: #fff;
+  text-decoration: underline;
 }
 .Information-item {
   display: flex;
@@ -46,9 +48,11 @@ h2 {
   padding: 0;
 }
 h3 {
-  font-size: 18px;
-  margin: 0 0 8px 0;
+  font-size: 20px;
+  margin: 0 0 0px 0;
   padding: 0;
+  text-align: center;
+  color: rgb(255, 246, 246);
 }
 input {
   background-color: #fff;
@@ -72,19 +76,31 @@ input {
   margin: 10px 0 0;
 }
 .Information button {
-  box-shadow: inset 0px 1px 0px 0px #bee2f9;
-  background: linear-gradient(to bottom, #c6ee63 5%, #cfb346 100%);
+  background: #ffce0e;
   border-radius: 6px;
-  border: 1px solid #c6ee63;
+  border: none;
   display: inline-block;
   cursor: pointer;
-  color: #000000;
+  color: #000;
   font-family: Arial;
   font-size: 15px;
   font-weight: bold;
-  padding: 6px 24px;
+  padding: 10px 23px;
   text-decoration: none;
   width: 20%;
   display: block;
   outline: none;
+}
+@media (max-width: 700px) {
+  .Information button {
+    width: 40%;
+  }
+  .Information {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 550px) {
+  .Information-sidebar {
+    display: none;
+  }
 }

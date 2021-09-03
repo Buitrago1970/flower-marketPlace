@@ -23,7 +23,9 @@ const Checkout = () => {
       <div className="Checkout">
         <div className="Checkout-content">
           {cart.length > 0 ? (
-            <h3>Lista de Pedidos:</h3>
+            <div className="container-title-checkout">
+              <h3>Lista de Pedidos</h3>
+            </div>
           ) : (
             <>
               <h3>No has agregado ningun pedido</h3>
@@ -32,26 +34,32 @@ const Checkout = () => {
               </Link>
             </>
           )}
-
           {cart.map((item, i) => (
-            <div className="Checkout-item" key={i}>
-              <div className="Checkout-element">
-                <h4>{item.title}</h4>
-                <span>{`$${item.price}`}</span>
+            <div className="container-items">
+              <div className="Checkout-item" key={i}>
+                <div className="Checkout-element">
+                  <div className="containerImg">
+                    <img className="" src={item.image} alt={item.title} />
+                    <h4>{item.title}</h4>
+                  </div>
+                  <span className="price">{`$${item.price}`}</span>
+                </div>
+                <button
+                  onClick={() => handleDeleteItem(item, i)}
+                  type="button"
+                  title="Eliminar"
+                >
+                  <i className="fas fa-trash-alt" />
+                </button>
               </div>
-              <button
-                onClick={() => handleDeleteItem(item, i)}
-                type="button"
-                title="Eliminar"
-              >
-                <i className="fas fa-trash-alt" />
-              </button>
             </div>
           ))}
         </div>
         {cart.length > 0 && (
           <div className="Checkout-sidebar">
-            <h3>{`Precio Total: $${handleSumTotal(cart)}`}</h3>
+            <h3 className="title-price">{`Precio Total: $${handleSumTotal(
+              cart
+            )}`}</h3>
             <Link to={'/checkout/info'}>
               <button type="button">Continuar pedido</button>
             </Link>

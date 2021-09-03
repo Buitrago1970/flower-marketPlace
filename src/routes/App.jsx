@@ -24,7 +24,6 @@ export default function App() {
             <Route exact path="/checkout/info" component={Info} />
             <Route exact path="/checkout/payment" component={Payment} />
             <Route exact path="/checkout/success" component={Success} />
-            <Route component={NotFound} />
           </Layout>
         </Switch>
       </BrowserRouter>

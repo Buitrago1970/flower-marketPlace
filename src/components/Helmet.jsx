@@ -5,7 +5,7 @@ const image =
 
 const MetaHead = ({ title, description, url }) => (
   <Helmet>
-    <title>{`${title} - Anda Shop`}</title>
+    <title>{`${title} Plantana Shop`}</title>
     <meta name="description" content={description} />
     <meta
       name="robots"
